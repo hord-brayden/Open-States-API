@@ -1,0 +1,172 @@
+     <!-- Contact Your Legislator -->
+        <div id="contact-your-legislator" class="container" style="margin-bottom:50px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Form Instructions -->
+                    <div class="form-instructions">
+                        <h2 class="text-left" style="color:#9a9b9d">Contact Your Legislator</h2>
+                        <p>Tell your legislator to pass a hate crimes bill in Georgia, now!</p>
+                        <ol>
+                            <li>Enter your address below to look up your legislators.</li>
+                            <li>Use our pre-written message, or customize your own.</li>
+                            <li>Hit send and share with friends.</li>
+                        </ol> &nbsp;
+                    </div>
+
+                    <!-- Legislator Lookup Form: Open States v2 -->
+                    <div id="legislator-lookup-form">
+		  <!-- See Markup in Gravity Form: Be sure to set onclick="return false" to bypass GF submit function and run OpenStatesApiV2() instead -->
+						<div class="lookup-faux-box">
+                            <button class="btn btn-primary uppercase" id="search-legislators" onclick="return false" style="margin-top:25px;">Look Up</button>
+                            <div id="api-result" class="container" style="margin-top:25px;">
+                                <ul class="result-list row"></ul>
+                            </div> 
+							</div>
+                        <?php echo do_shortcode('[gravityform id="19" title="false" description="false" tabindex="50"]'); ?>
+
+                    </div>
+
+                    <!-- ??? -->
+                    <div class="row">
+                        <div id="random"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /* Move open states button below the apprope div, since the previous gforms button integration is broken/deprecated */
+            jQuery( document ).ready(function() {
+             jQuery('.lookup-faux-box').appendTo("#field_19_19");
+              
+              jQuery("#search-legislators").click(function () {
+                //jQuery("#input_19_19").toggle();
+                //add duncan's email right after
+                //jQuery("#input_19_19").val(jQuery("#input_19_19").val() + 'geoff.duncan@house.ga.gov'); -- Old way to insert govs email*/ 
+                jQuery("#field_19_14").toggle();
+                jQuery("#field_19_13").toggle();
+                jQuery("#field_19_15").toggle();
+                jQuery("#field_19_16").toggle();
+                jQuery("#field_19_17").toggle();
+                jQuery("#field_19_18").toggle();
+                jQuery("#gform_submit_button_19").toggle();
+                    });
+            });
+          </script>
+          
+          <style>
+            /* Just hiding the dedicated Lookup Button that's a gform field for now just until we can finish troubleshooting why it won't display the correct HTML/Jq markup */
+            
+            li#field_19_20 {
+              display: none;
+          }
+            
+            /* hide these fields until we hit the load button */
+          #input_19_19, #field_19_14, #field_19_14, #field_19_13, #field_19_15, #field_19_16, #field_19_18, #field_19_17, #gform_submit_button_19{
+            display:none;
+            }
+            
+            /* this list below just for legibility
+          #field_19_14{display:none;}
+          #field_19_13{display:none;}
+          #field_19_15{display:none;}
+          #field_19_16{display:none;}
+          #field_19_18{display:none;}
+          #field_19_17{display:none;}
+          #gform_submit_button_19{display:none;}
+            */
+            
+            
+            
+            /* These wrappers just eliminate the header/footer default classes since we decided to spint his up so quick */
+            #wrapper-footer {
+              display:none;
+            }
+            #wrapper-navbar {
+              display:none;
+            }
+            
+            
+          
+              #sign-up-form {
+                background-color: #a53032; background-size: cover; padding: 50px 30px; background-repeat:no-repeat;
+                background: url(http://saveour.aodev4.com/wp-content/uploads/2017/06/Vector-Smart-Object.png) no-repeat top center;
+              }
+          
+              #contact-your-legislator {
+                background-color: white; padding-bottom: 30px; padding-top: 30px;
+                padding-left: 15px; padding-right: 15px; margin-top: 50px;
+              }
+          
+              #search-legislators {
+                background-color: white; color: #75777a; border: 2px solid #75777a;
+                text-transform: uppercase; width: 100%; padding: 10px 0;
+              }
+            #search-legislators:hover {
+                background-color: #75777a; color: white; border: 2px solid white;
+              }
+            
+            /* results list formatting */
+            .result-list {
+              display: flex;
+              list-style: none;
+            }
+            
+            li.active-rep {
+              background-color: #f1eed0;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 1em;
+          }
+            
+            .rep-wrap {
+              background-color: #f1eed0;
+            }
+            
+            .rep-pic-wrap img {
+              height:auto !important;
+            }
+            
+            .rep-info .row {
+              display: block;
+          }
+            @media only screen and (max-width: 600px) {
+              .rep-info {
+                text-align: center;
+              }
+            }
+            
+            .party-badge {
+              background-color: red;
+              color: white; 
+            }
+            
+            /* Submit button formatting */
+            
+              button#gform_submit_button_19 {
+              position: static;
+              padding-right: 100px;
+              padding-left: 100px;
+              border: 2px solid #eb7c94;
+              border-radius: 0px;
+              background-color: #eb7c94;
+              font-family: 'Lexend Deca', sans-serif;
+              color: #fff;
+              font-weight: 700;
+              text-align: left;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              -o-object-fit: fill;
+              object-fit: fill;
+            }
+            
+            button#gform_submit_button_19:hover {
+              border-color: #d93c56;
+              border-radius: 0px;
+              background-color: #d93c56;
+              color: #fff;
+            }
+            
+            
+            
+          </style>

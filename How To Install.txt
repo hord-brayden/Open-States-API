@@ -1,0 +1,8 @@
+How to INSTALL Open States on Wordpress
+
+1. Drop openstates2.js into the parent theme container -> base-theme/inc/js/
+2. Drop open-states-v2.php into the parent theme container -> base-theme/inc
+Functions?
+3. Put template into the HTML page
+4. Import the gForms JSON file into gravity gForms
+5. Profit

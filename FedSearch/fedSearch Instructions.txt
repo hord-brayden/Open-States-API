@@ -1,0 +1,26 @@
+Add the following lines to child functions.php, on line 22
+
+wp_enqueue_script( 'csv-injector', get_template_directory_uri() . '/inc/js/csvpull.js', array(), '1', true );
+
+wp_enqueue_script( 'jquery-csv', get_template_directory_uri() . '/inc/js/jquery.csv.min.js', array(), '1', true );
+
+wp_enqueue_script( 'fed-search', get_template_directory_uri() . '/inc/js/findfeds.js', array(), '1', true );
+
+
+place all files within /wp-content/themes/base-theme/inc/js
+
+CSV pulls from CSV found within the CSV file found in /wp-content/themes/base-theme/inc/js/csv
+
+How to hookup FedSearch to a Form:
+
+1. Import gravity-forms.json file into gravity forms as a new form, so everything is pre-built.
+
+1. Open findfeds.js in editor, and make sure const debug = true; to log pertinent data into the console.
+
+2. Get a new Google API key from https://console.cloud.google.com/home/dashboard?folder=&organizationId=&project=find-my-fed-01, and make a new key, then paste it into findfeds.js as the value for google_api_key.
+
+3. Make sure your const searchBtn is equal to the correct lookup button in your Gravity form.
+
+4. Make sure the const gFormsID is set to the same ID as the Gravity form you imported during step 1 that you imported
+
+5. Proceed to make test calls, and inspect your console to see how the responses are coming in, and what you can do to map the objects to the correct fields.
