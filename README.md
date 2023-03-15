@@ -1,4 +1,4 @@
-# Open-States-API
+# Federal-Search-API
 Open States API exploration
 Google Civic Search API exploration
 Propublica API Exploration  
